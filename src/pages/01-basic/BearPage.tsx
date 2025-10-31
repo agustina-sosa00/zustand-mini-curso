@@ -1,6 +1,6 @@
-import { useShallow } from "zustand/shallow";
+import { useShallow } from "zustand/react/shallow";
 import { WhiteCard } from "../../components";
-import { useBearStore } from "../../store/bearsStore";
+import { useBearStore } from "../../store/bears/bearsStore";
 
 export const BearPage = () => {
   return (
@@ -22,7 +22,6 @@ export const BearPage = () => {
 export const Bears = ({ bearState, increaseBearState }) => {
   const bear = useBearStore((state) => state[bearState]);
   const increaseBear = useBearStore((state) => state[increaseBearState]);
-
   return (
     <WhiteCard centered>
       <h2 className="py-2">{bearState}</h2>
